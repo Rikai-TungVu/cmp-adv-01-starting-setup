@@ -12,16 +12,18 @@
 
 <script>
 import TheHeader from './components/TheHeader.vue';
-/* Khai báo trực tiếp vào component nếu chỉ dùng ít lần */
+/* Import trực tiếp vào component App*/
+/* Thay vì khai báo hết ở main.js */
 
 export default {
   components:{
     'the-header': TheHeader
+    /* Định nghĩa component TheHeader */
   },
   data() {
     return {
       activeUser: {
-        name: 'Maximilian Schwarzmüller',
+        name: 'Manuel Fri',
         description: 'Site owner and admin',
         role: 'admin',
       },
