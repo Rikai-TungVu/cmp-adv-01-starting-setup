@@ -1,13 +1,12 @@
 <template>
     <div>
-
+        <slot></slot>
+        <!-- thẻ slot ở đây chỉ truyền phần style qua component được khai báo -->
     </div>
 </template>
 
 <script>
-    export default {
-        props: ['content']
-    }
+    export default {}
 </script>
 
 <style scoped>
