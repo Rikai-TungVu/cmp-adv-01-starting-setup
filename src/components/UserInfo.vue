@@ -2,11 +2,14 @@
   <section>
     <base-card>
     <!-- Component BaseCard đã được khai báo vs định nghĩa ở main.js -->
-      <header>
-        <h3>{{ fullName }}</h3>
+      <template v-slot:header>
+        <!-- nối slot vàp template bằng v-slot -->
+        <h2>{{ fullName }}</h2>
         <base-badge :type="role" :caption="role.toUpperCase()"></base-badge>
-      </header>
-      <p>{{ infoText }}</p>
+      </template>
+      <template v-slot:default>
+        <p>{{ infoText }}</p>
+      </template>
     </base-card>
   </section>
 </template>
@@ -16,11 +19,3 @@ export default {
   props: ['fullName', 'infoText', 'role'],
 };
 </script>
-
-<style scoped>
-section header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>

@@ -1,20 +1,38 @@
 <template>
     <div>
+        <header v-if="$slots.header">
+            <slot name="header">
+                <h2>
+                    The Default
+                </h2>
+            </slot>
+            <!-- thẻ slot ở đây chỉ truyền phần style qua component được khai báo -->
+            <!-- có thể định danh slot bằng name -->
+            <!-- nếu chỉ có 1 slot = default -->
+        </header>
         <slot></slot>
-        <!-- thẻ slot ở đây chỉ truyền phần style qua component được khai báo -->
     </div>
 </template>
 
 <script>
-    export default {}
+    export default {
+        mounted() {
+            console.log(this.$slots.header);
+        }
+    }
 </script>
 
 <style scoped>
-    div {
-        margin: 2rem auto;
-        max-width: 30rem;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-        padding: 1rem;
-    }
+section header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+div {
+    margin: 2rem auto;
+    max-width: 30rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 1rem;
+}
 </style>
